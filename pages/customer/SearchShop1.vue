@@ -41,28 +41,8 @@
         }
       },
       mounted: function () {
-        // this.categoriesData();
-        // this.regionData();
       },
       methods: {
-        //  async categoriesData() {
-        //   try {
-        //     const res = await helper.instance.get('masters/category');
-        //     this.options=res.data
-        //   } catch (e) {
-        //     console.error(e);
-        //   }
-        // },
-        // async regionData() {
-        //   try {
-        //     const res = await helper.instance.get(`masters/region`);
-        //     this.regions=res.data.regions
-        //   } catch (e) {
-        //     console.error(e);
-        //   }
-        // },
-
-
         saveShop: function(){
           try {
             helper.instance.post('user/searchProduct',this.formData);
