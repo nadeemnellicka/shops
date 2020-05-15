@@ -23,5 +23,11 @@
     "vue-multiselect": "^2.1.6",
     "vuelidate": "^0.7.5"
   },
+  "scripts": {
+  "dev": "nuxt",
+  "build": "nuxt build",
+  "start": "nuxt start",
+  "generate": "nuxt generate"
+},
   "devDependencies": {}
 }
