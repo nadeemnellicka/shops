@@ -76,11 +76,8 @@
 <script>
 
 
-  import Multiselect from 'vue-multiselect';
-  import AppHeader from '../../components/AppHeader';
-  import helper from "../../helper.js";
   export default {
-    components: { Multiselect,AppHeader},
+    components: { },
       name: "CreateShopApp",
       data() {
         return {
@@ -96,7 +93,7 @@
          async categoriesData() {
           try {
             var url = `masters/category`;
-            const res = await helper.instance.get(url);
+            const res = await this.$axios.get(url);
             this.options=res.data.data
           } catch (e) {
             console.error(e);
@@ -104,7 +101,7 @@
         },
         async getLocation() {
           try {
-            const res = await helper.instance.get( `masters/pincodeDetail/` + this.formData.pincode);
+            const res = await this.$axios.get( `masters/pincodeDetail/` + this.formData.pincode);
             this.formData.division_name = res.data.pincode.division_name;
             this.formData.country = res.data.country.name;
             this.formData.state = res.data.state.name;
@@ -115,7 +112,7 @@
         },
           async saveShop() {
           try {
-            await helper.instance.post('user/addShop',this.formData);
+            await this.$axios.post('user/addShop',this.formData);
           } catch (e) {
             console.error(e);
           }

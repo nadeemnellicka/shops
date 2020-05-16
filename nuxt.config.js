@@ -42,7 +42,28 @@ export default {
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
     'nuxt-vue-multiselect',
+    '@nuxtjs/axios',
+    '@nuxtjs/auth',
   ],
+
+  auth: {
+  strategies: {
+    local: {
+      endpoints: {
+        login: { url: 'user/login', method: 'post', propertyName: 'token' },
+        logout: { url: 'user/logout', method: 'post' },
+        user: { url: 'user/details', method: 'get', propertyName: 'user' }
+      },
+      // tokenRequired: true,
+      // tokenType: 'bearer',
+      // globalToken: true,
+      // autoFetchUser: true
+    }
+  }
+},
+axios:{
+   baseURL: 'http://127.0.0.1:8000/api/v1/',
+},
   /*
   ** Build configuration
   */

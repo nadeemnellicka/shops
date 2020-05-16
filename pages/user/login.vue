@@ -7,16 +7,16 @@
                     <div id="login-box" class="col-md-12">
                             <h3 class="text-center text-info">Login</h3>
                             <div class="form-group">
-                                <label for="username" class="text-info">Username:</label><br>
-                                <input type="text"  v-model="formData.email"  class="form-control">
+                                <label for="username" class="text-info">Email:</label><br>
+                                <input type="text"  v-model="login.email"  class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="password" class="text-info">Password:</label><br>
-                                <input type="password"  v-model="formData.password" class="form-control">
+                                <input type="password"  v-model="login.password" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                                <button  @click="login" class="btn btn-info btn-md">Login</button>
+                                <button  @click="userLogin" class="btn btn-info btn-md">Login</button>
                             </div>
                             <div id="register-link" class="text-right">
                                 <a href="#" class="text-info">Register here</a>
@@ -59,36 +59,24 @@
    name: "userLogin",
       data() {
         return {
-          formData :{},
+        login: {
+          email: 'shinas@gmail.com',
+          password: '12345'
+      }
         }
       },
        mounted: function () {
       },
       methods: {
-        // login: function(){
-        //   try {
-        //     axios.post('http://127.0.0.1:8000/api/v1/user/login',this.formData);
-        //   } catch (e) {
-        //     console.error(e);
-        //   }
-        // },
-
-         async login() {
-          try {
-            const res = await axios.post('http://127.0.0.1:8000/api/v1/user/login',this.formData);
-            if(res.data.status=='success'){
-              localStorage.setItem('key', res.data.access_token);
-              localStorage.setItem('user_name', res.data.user.name);
-              this.$router.push('/customer/SearchShop');
-              // window.location.replace("/customer/SearchShop");
-            }else{
-               alert('eee'); 
-            }
-            console.log(res);
-          } catch (e) {
-            console.error(e);
-          }
-        },
+      async userLogin() {
+      try {
+        let response = await this.$auth.loginWith('local', { data: this.login })
+        this.$router.push('/customer/SearchShop');
+        console.log(response)
+      } catch (err) {
+        console.log(err)
+      }
+    },
 
 
       },

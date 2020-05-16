@@ -20,14 +20,9 @@
     "nuxt-validate": "^1.0.1",
     "nuxt-vue-multiselect": "^1.0.4",
     "nuxt-vuex-localstorage": "^1.2.6",
+    "validation-utils": "^4.0.2",
     "vue-multiselect": "^2.1.6",
     "vuelidate": "^0.7.5"
   },
-  "scripts": {
-  "dev": "nuxt",
-  "build": "nuxt build",
-  "start": "nuxt start",
-  "generate": "nuxt generate"
-},
   "devDependencies": {}
 }

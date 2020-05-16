@@ -44,11 +44,8 @@
   </div>
 </template>
 <script>
-  import Multiselect from 'vue-multiselect';
-  import AppHeader from '../../components/AppHeader';
-  import helper from "../../helper.js";
   export default {
-    components: { Multiselect,AppHeader},
+    components: { },
       name: "searchShopApp",
       data() {
         return {
@@ -64,7 +61,7 @@
       methods: {
          async categoriesData() {
           try {
-            const res = await helper.instance.get('masters/category');
+            const res = await this.$axios.get('masters/category');
             this.options=res.data.data
           } catch (e) {
             console.error(e);
@@ -72,7 +69,7 @@
         },
         async regionData() {
           try {
-            const res = await helper.instance.get(`masters/region`);
+            const res = await this.$axios.get(`masters/region`);
             this.regions=res.data.data
           } catch (e) {
             console.error(e);
@@ -82,7 +79,7 @@
 
         saveShop: function(){
           try {
-            helper.instance.post('user/searchProduct',this.formData);
+            this.$axios.post('user/searchProduct',this.formData);
           } catch (e) {
             console.error(e);
           }
