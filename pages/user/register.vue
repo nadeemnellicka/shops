@@ -26,7 +26,7 @@
                                 <button  @click="userRegister" class="btn btn-info btn-md">Register</button>
                             </div>
                             <div id="register-link" class="text-right">
-                                <a href="#" class="text-info">Register</a>
+                                <nuxt-link  to='/user/login' class="text-info">Login here</nuxt-link>
                             </div>
                     </div>
                 </div>

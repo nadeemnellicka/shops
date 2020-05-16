@@ -19,7 +19,7 @@
                                 <button  @click="userLogin" class="btn btn-info btn-md">Login</button>
                             </div>
                             <div id="register-link" class="text-right">
-                                <a href="#" class="text-info">Register here</a>
+                                <nuxt-link  to='/user/register' class="text-info">Register here</nuxt-link>
                             </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
 #login .container #login-row #login-column #login-box {
   margin-top: 120px;
   max-width: 600px;
-  height: 320px;
+  height: 350px;
   border: 1px solid #9C9C9C;
   background-color: #EAEAEA;
 }
