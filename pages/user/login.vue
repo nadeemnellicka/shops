@@ -52,8 +52,6 @@
 
 
 <script>
-
-  import axios from "axios";
  export default {
    auth: false,
    name: "userLogin",
