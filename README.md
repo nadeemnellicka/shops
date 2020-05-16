@@ -1,6 +1,6 @@
 # shops
 
-> My cool Nuxt.js project
+> My coolBross Nuxt.js project
 
 ## Build Setup
 
