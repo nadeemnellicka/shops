@@ -17,7 +17,9 @@
                             <div class="form-group">
                                 <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
                                 <button  @click="userLogin" class="btn btn-info btn-md">Login</button>
+                                <button  @click="userGoogleLogin" class="btn btn-info btn-md">Google</button>
                             </div>
+                            <div></div>
                             <div id="register-link" class="text-right">
                                 <nuxt-link  to='/user/register' class="text-info">Register here</nuxt-link>
                             </div>
@@ -70,6 +72,14 @@
       try {
         let response = await this.$auth.loginWith('local', { data: this.login })
         this.$router.push('/customer/SearchShop');
+        console.log(response)
+      } catch (err) {
+        console.log(err)
+      }
+    },
+       async userGoogleLogin() {
+      try {
+        let response = await this.$auth.loginWith('google')
         console.log(response)
       } catch (err) {
         console.log(err)

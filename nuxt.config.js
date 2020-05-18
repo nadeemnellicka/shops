@@ -58,7 +58,10 @@ export default {
       // tokenType: 'bearer',
       // globalToken: true,
       // autoFetchUser: true
-    }
+    },
+    google: {
+        client_id: '724692044535-fmqnkafd1ano8qst0jp8valitltb7qcd.apps.googleusercontent.com'
+      },
   }
 },
 axios:{

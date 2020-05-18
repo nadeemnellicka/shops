@@ -16,15 +16,15 @@
           <b-dropdown-item @click="$auth.logout()" href="#">Sign Out</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
-    </b-collapse>  
-      <b-collapse v-else id="nav-collapse" is-nav>
-      <b-navbar-nav>
-      </b-navbar-nav>
-      <b-navbar-nav class="ml-auto">
-          <b-nav-item href="#"><nuxt-link to='/user/login'>Login</nuxt-link></b-nav-item>
-          <b-nav-item href="#"><nuxt-link to='/user/register'>Register</nuxt-link></b-nav-item>
-      </b-navbar-nav>
+    </b-collapse> 
+
+      <b-collapse v-else id="nav-collapse1" is-nav>
+        <b-navbar-nav class="ml-auto">
+            <b-nav-item href="#"><nuxt-link to='/user/login'>Login</nuxt-link></b-nav-item>
+            <b-nav-item href="#"><nuxt-link to='/user/register'>Register</nuxt-link></b-nav-item>
+        </b-navbar-nav>
     </b-collapse>
+
   </b-navbar>
 </div>
 </template>

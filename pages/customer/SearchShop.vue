@@ -1,6 +1,5 @@
 <template>
     <div id="searchShopApp">
-  <AppHeader />
       <form>
         <h1>Search Item</h1>
         <div class="form-group col-sm-10">

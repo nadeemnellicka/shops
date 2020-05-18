@@ -1,6 +1,5 @@
 <template>
     <div id="CreateShopApp">
-      <AppHeader />
       <form><h1>Create Shop</h1>
         <div class="form-group col-sm-10">
           <div class='form-group row'>
